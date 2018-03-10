@@ -1,0 +1,40 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+.wrapper{
+    width: 970px;
+    text-align: center;
+    vertical-align: top;
+}
+
+.box{
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    margin: 10px;
+    border: 1px solid black;
+    vertical-align: top;
+}
+
+box1{
+    margin-top: 0px;
+}
+
+.log{
+    overflow: scroll;
+    width: 100%;
+    height: 200px;
+    border: 1px solid black;
+    text-align: left;
+}
+
+.red{
+    color: red;
+}
+
+.green{
+    color: green;
+}

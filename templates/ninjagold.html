@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>Ninja Gold</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  
+  <body>
+      <div class="wrapper">
+        Your Gold: {{session['num']}}<br>
+        <div class="box" "box1">
+            <h3>Farm</h3><br>
+            (Earns 10-20 gold)
+            <br><br><br>
+            <form action="/process_money" method="post">
+                <input type="hidden" name="building" value="farm" />
+                <input type="submit" value="Find Gold!"/>
+            </form>     
+        </div>
+        <div class="box">
+            <h3>Cave</h3><br>
+            (Earns 5-10 gold)
+            <br><br><br>
+            <form action="/process_money" method="post">
+                <input type="hidden" name="building" value="cave" />
+                <input type="submit" value="Find Gold!"/>
+            </form>     
+        </div>
+        <div class="box">
+            <h3>House</h3><br>
+            (Earns 2-5 gold)
+            <br><br><br>
+            <form action="/process_money" method="post">
+                <input type="hidden" name="building" value="house" />
+                <input type="submit" value="Find Gold!"/>
+            </form>     
+        </div>
+        <div class="box">
+            <h3>Casino</h3><br>
+            (Earns/Takes 0-50 gold)
+            <br><br><br>
+            <form action="/process_money" method="post">
+                <input type="hidden" name="building" value="casino" />
+                <input type="submit" value="Find Gold!"/>
+            </form>     
+        </div>
+        <div class="log">   
+            {% for i in range(session['length']-1,-1,-1) %}
+            <span class="{{session['log'][i][1]}}">{{session['log'][i][0]}}</span>
+         <br>
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+  </body>
+</html>
